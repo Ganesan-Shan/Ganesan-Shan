@@ -1,0 +1,88 @@
+
+seskanim02:/tmp/rpm_splunk# ls -altr
+
+ total 70504
+
+ -rw-r--r-- 1 kmbx994 unxinfra 29735947 Sep 23 16:26 glib2-2.56.1-2.aix6.1.ppc.rpm
+
+ -rw-r--r-- 1 kmbx994 unxinfra 680361 Sep 23 16:26 info-6.6-2.aix6.1.ppc.rpm
+
+ -rw-r--r-- 1 kmbx994 unxinfra 3662930 Sep 23 16:26 ncurses-6.2-2.aix6.1.ppc.rpm
+
+ drwxr-xr-x 2 kmbx994 unxinfra 4096 Sep 23 16:26 .
+
+ -rw-r--r-- 1 kmbx994 unxinfra 361005 Sep 23 16:26 ncurses-devel-6.2-2.aix6.1.ppc.rpm
+
+ -rw-r--r-- 1 kmbx994 unxinfra 1557408 Sep 23 16:26 tar-1.32-1.aix6.1.ppc.rpm
+
+ drwxrwxrwt 394 bin bin 77824 Sep 23 16:37 ..
+
+ seskanim02:/tmp/rpm_splunk# for i in *; do rpm -Uvh *;done
+
+ error: Failed dependencies:
+
+ libgcc >= 6.3.0-1 is needed by glib2-2.56.1-2.ppc
+
+ gettext >= 0.19.8.1-4 is needed by info-6.6-2.ppc
+
+ libgcc >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ libstdc++ >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ gettext >= 0.19.8.1 is needed by tar-1.32-1.ppc
+
+ error: Failed dependencies:
+
+ libgcc >= 6.3.0-1 is needed by glib2-2.56.1-2.ppc
+
+ gettext >= 0.19.8.1-4 is needed by info-6.6-2.ppc
+
+ libgcc >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ libstdc++ >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ gettext >= 0.19.8.1 is needed by tar-1.32-1.ppc
+
+ error: Failed dependencies:
+
+ libgcc >= 6.3.0-1 is needed by glib2-2.56.1-2.ppc
+
+ gettext >= 0.19.8.1-4 is needed by info-6.6-2.ppc
+
+ libgcc >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ libstdc++ >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ gettext >= 0.19.8.1 is needed by tar-1.32-1.ppc
+
+ error: Failed dependencies:
+
+ libgcc >= 6.3.0-1 is needed by glib2-2.56.1-2.ppc
+
+ gettext >= 0.19.8.1-4 is needed by info-6.6-2.ppc
+
+ libgcc >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ libstdc++ >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ gettext >= 0.19.8.1 is needed by tar-1.32-1.ppc
+
+ error: Failed dependencies:
+
+ libgcc >= 6.3.0-1 is needed by glib2-2.56.1-2.ppc
+
+ gettext >= 0.19.8.1-4 is needed by info-6.6-2.ppc
+
+ libgcc >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ libstdc++ >= 8.3.0-1 is needed by ncurses-6.2-2.ppc
+
+ gettext >= 0.19.8.1 is needed by tar-1.32-1.ppc
+
+ seskanim02:/tmp/rpm_splunk# rpm -Uvh glib2-2.56.1-2.aix6.1.ppc.rpm
+
+ error: Failed dependencies:
+
+ libgcc >= 6.3.0-1 is needed by glib2-2.56.1-2.ppc
+
+
