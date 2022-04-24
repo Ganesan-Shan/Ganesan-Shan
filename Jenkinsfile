@@ -1,63 +1,33 @@
 pipeline {
+    agent any
 
-    agent {
-
-        dockerfile true
-
+    tools {
+        maven "maven"
+        jdk "jdk11"
     }
 
     stages {
-
-        stage('Run Provar Tests') {
-
-            steps {
-
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"       
-
-                sh "xvfb-run ant -f ANT/build.xml -v"
-
+        stage('Initialize'){
+            steps{
+                echo "PATH = ${M2_HOME}/bin:${PATH}"
+                echo "M2_HOME = /opt/maven"
             }
-
         }
-
-    }
-
+        stage('Build') {
+            steps {
+                dir("/var/lib/jenkins/workspace/New_demo/my-app") {
+                sh 'mvn -B -DskipTests clean package'
+                }
+            
+            }
+        }
+     }
     post {
-
-        always {
-
-            junit allowEmptyResults: true, testResults: 'ANT/Results/*.xml'
-
-            cleanWs notFailBuild: true /* cleans up the workspace */
-
-        }
-
-        success {
-
-            echo "Success: Good job!"
-
-        }        
-
-        failure {            
-
-            echo 'Failure: Something went wrong with the Provar ANT build. Printing environment for debugging'            
-
-            sh 'printenv'
-
-            echo 'Printing hosts'
-
-            sh 'cat /etc/hosts'
-
-            echo 'Searching for provar directories/files in the system...'
-
-            sh 'find / -name "provar*"'
-
-            echo 'Finding chrome drivers'
-
-            sh "find / -name '*chromedriver*'"
-
-        }        
-
-    }   
-
+       always {
+          junit(
+        allowEmptyResults: true,
+        testResults: '*/test-reports/.xml'
+      )
+      }
+   } 
 }
